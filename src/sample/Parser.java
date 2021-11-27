@@ -98,6 +98,9 @@ public class Parser {
 
     private int checkNextOperation(int startIndex) {
         for (int i = startIndex; i < myExpression.length(); i++) {
+            if ("()".contains(Character.toString(myExpression.charAt(i)))) {
+                return -1;
+            }
             if ("+-*÷".contains(Character.toString(myExpression.charAt(i)))) {
                 if("*÷".contains(Character.toString(myExpression.charAt(i)))){
                     return i;
