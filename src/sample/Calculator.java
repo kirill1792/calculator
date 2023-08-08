@@ -8,9 +8,9 @@ public class Calculator {
         this.expression = expression.replace(" ", "");
     }
 
-    public void evaluate(){
+    public double evaluate(){
         Parser parser = new Parser(expression);
         objectExpression = parser.mainMethod();
-        System.out.println(objectExpression);
+        return objectExpression.calculate();
     }
 }

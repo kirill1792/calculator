@@ -8,5 +8,4 @@ public class ParsingResult {
         this.expression = expression;
         this.finalIndex = finalIndex;
     }
-
 }

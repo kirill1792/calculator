@@ -15,7 +15,7 @@ public class Parser {
 
     public ParsingResult parse(int startIndex){
         Element currentLeftElement;
-        if (Character.toString(myExpression.charAt(startIndex)).equals("(")){
+         if (Character.toString(myExpression.charAt(startIndex)).equals("(")){
             ParsingResult res = parse(startIndex + 1);
             currentLeftElement = res.expression;
             startIndex = res.finalIndex + 1;
@@ -82,7 +82,7 @@ public class Parser {
     private String checkForNumber(int startIndex){
         StringBuilder num = new StringBuilder();
         for (int i = startIndex; i < myExpression.length(); i++) {
-             if (Character.isDigit(myExpression.charAt(i)) | i == startIndex & "+-".contains(Character.toString(myExpression.charAt(i)))) {
+             if (Character.isDigit(myExpression.charAt(i)) | ".".contains(Character.toString(myExpression.charAt(i))) & num.indexOf(Character.toString(myExpression.charAt(i))) == -1 | i == startIndex & "+-".contains(Character.toString(myExpression.charAt(i)))) {
                 num.append(myExpression.charAt(i));
              }
              else {

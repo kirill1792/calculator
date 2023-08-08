@@ -43,7 +43,7 @@ public class TestController {
                 if (validator.validate()) {
                     System.out.println("Выражение введено корректно");
                     Calculator calculator = new Calculator(calcTextField.getText());
-                    calculator.evaluate();
+                    calcTextField.appendText("=" + calculator.evaluate());
                 }
                 else {
                     System.out.println("Выражение введено некорректно");

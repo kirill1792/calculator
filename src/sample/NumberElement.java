@@ -8,7 +8,7 @@ public class NumberElement implements Element{
     }
 
     @Override
-    public Number calculate() {
-        return Integer.parseInt(value);
+    public double calculate() {
+        return Double.parseDouble(value);
     }
 }

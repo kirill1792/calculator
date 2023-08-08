@@ -11,7 +11,21 @@ public class BinaryExpression extends Expression{
     }
 
     @Override
-    public Number calculate() {
-        return null;
+    public double calculate() {
+        double leftElemResult = leftOperand.calculate();
+        double rightElemResult = rightOperand.calculate();
+        return makeOperation(leftElemResult, rightElemResult);
+    }
+
+
+    private double makeOperation(double lRes, double rRes){
+        double result = 0.0;
+        switch (operation) {
+            case PLUS -> result = lRes + rRes;
+            case MINUS -> result = lRes - rRes;
+            case MULTIPLY -> result = lRes * rRes;
+            case DIVISION -> result = lRes / rRes;
+        }
+        return result;
     }
 }
